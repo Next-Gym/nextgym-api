@@ -54,3 +54,9 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+config :mongoconfig, db_user: "root"
+config :mongoconfig, db_password: "example"
+config :mongoconfig, database: "mongoloide_dev"
+config :mongoconfig, pool_size: 3
+config :mongoconfig, connection_url: "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.2"

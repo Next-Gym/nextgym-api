@@ -15,7 +15,16 @@ defmodule Nextgym.Application do
       # Start Finch
       {Finch, name: Nextgym.Finch},
       # Start the Endpoint (http/https)
-      NextgymWeb.Endpoint
+      NextgymWeb.Endpoint,
+      {Mongo,
+       [
+         name: :mongo,
+         database: Application.get_env(:mongoconfig, :database),
+         pool_size: Application.get_env(:mongoconfig, :pool_size),
+         username: Application.get_env(:mongoconfig, :db_user),
+         password: Application.get_env(:mongoconfig, :db_password),
+         auth_source: "admin"
+       ]}
       # Start a worker by calling: Nextgym.Worker.start_link(arg)
       # {Nextgym.Worker, arg}
     ]

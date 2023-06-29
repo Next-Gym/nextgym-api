@@ -7,6 +7,8 @@ defmodule NextgymWeb.Router do
 
   scope "/api", NextgymWeb do
     pipe_through :api
+
+    get "/", HelloController, :index
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
